@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+    <h2>Login Portal</h2>
+    <form>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <br>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <br>
+        <button type="button" id="loginBtn" onclick="handleLogin()">Login</button>
+    </form>
+    <p id="message"></p>
+
+    <script>
+        function handleLogin() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const msg = document.getElementById('message');
+            
+            if (user === "admin" && pass === "password123") {
+                msg.style.color = "green";
+                msg.innerText = "Login Successful!";
+            } else {
+                msg.style.color = "red";
+                msg.innerText = "Invalid credentials!";
+            }
+        }
+    </script>
+</body>
+</html>
